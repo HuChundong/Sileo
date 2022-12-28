@@ -556,4 +556,29 @@ final class PackageListManager {
             }
         }
     }
+    
+    public func ignoreAllUpgrade(completion: (() -> Void)?) {
+        let packagePairs = self.availableUpdates()
+        let updatesNotIgnored = packagePairs.filter({ $0.1?.wantInfo != .hold })
+        if updatesNotIgnored.isEmpty {
+            completion?()
+            return
+        }
+        
+        for packagePair in updatesNotIgnored {
+            let newestPkg = packagePair.0
+            
+            if let installedPkg = packagePair.1, installedPkg == newestPkg {
+                continue
+            }
+            #if !targetEnvironment(simulator) && !TARGET_SIMULATOR
+            DpkgWrapper.ignoreUpdates(true, package: newestPkg.packageID)
+            let installedPackage = PackageListManager.shared.installedPackage(identifier: newestPkg.package)
+            if let installedPackage {
+                installedPackage.wantInfo = .hold
+            }
+            #endif
+        }
+        completion?()
+    }
 }

@@ -213,3 +213,6 @@
 
 // Depcitions
 "View_Depiction" = "查看介绍";
+
+"Ignore_All_Title" = "已忽略所有更新";
+"Ignore_All_Body" = "所有等待更新的包都已经忽略，如需查看，请在设置中勾选->显示忽略的更新";

@@ -384,6 +384,37 @@ class PackageListViewController: SileoViewController, UIGestureRecognizerDelegat
         }
     }
     
+    // 忽略所有的更新
+    @objc func ignoreAllUpgradeClicked(gestureReconizer: UILongPressGestureRecognizer?) {
+        if gestureReconizer?.state != UIGestureRecognizer.State.began {
+            return
+        }
+        guard isEnabled else { return }
+        isEnabled = false
+        hapticResponse()
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            PackageListManager.shared.ignoreAllUpgrade {
+                self?.isEnabled = true
+                self?.reloadUpdates()
+             
+                DispatchQueue.main.async {
+                    self?.ignoreAllUpgradeDone()
+                }
+            }
+        }
+    }
+    
+    @objc func ignoreAllUpgradeDone() {
+        let alertController = UIAlertController(title: String(localizationKey: "Ignore_All_Title", type: .general),
+                                                message: String(localizationKey: "Ignore_All_Body", type: .general),
+                                                preferredStyle: .alert
+        )
+        alertController.addAction(UIAlertAction(title: String(localizationKey: "OK"), style: .cancel, handler: { _ in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     @objc func sortPopup(sender: UIView?) {
         let alert = UIAlertController(title: String(localizationKey: "Sort_By"), message: nil, preferredStyle: .actionSheet)
         alert.modalPresentationStyle = .popover
@@ -523,6 +554,9 @@ extension PackageListViewController: UICollectionViewDataSource {
             headerView.sortContainer?.isHidden = true
             headerView.separatorView?.isHidden = true
             headerView.upgradeButton?.addTarget(self, action: #selector(self.upgradeAllClicked(_:)), for: .touchUpInside)
+            let mLongClick = UILongPressGestureRecognizer(target: self, action: #selector(ignoreAllUpgradeClicked)) // 事件对象
+            headerView.upgradeButton?.addGestureRecognizer(mLongClick)
+            
             return headerView
         case .packages:
             if showUpdates {
