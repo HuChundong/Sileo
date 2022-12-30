@@ -392,9 +392,9 @@ final class PackageListManager {
                 if let pkg2 = obj2.name?.lowercased() {
                     if let searchQuery = search?.lowercased(),
                        !searchQuery.isEmpty {
-                        if pkg1.hasPrefix(searchQuery) && !pkg2.hasPrefix(searchQuery) {
+                        if pkg1.contains(searchQuery) && !pkg2.contains(searchQuery) {
                             return true
-                        } else if !pkg1.hasPrefix(searchQuery) && pkg2.hasPrefix(searchQuery) {
+                        } else if !pkg1.contains(searchQuery) && pkg2.contains(searchQuery) {
                             return false
                         }
                         

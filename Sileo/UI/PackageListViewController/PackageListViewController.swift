@@ -840,11 +840,15 @@ extension PackageListViewController: UISearchResultsUpdating {
                 
                 switch SortMode() {
                 case .installdate:
-                    _packages = _packages.sorted(by: { package1, package2 -> Bool in
-                        guard let date1 = package1.installDate,
-                              let date2 = package2.installDate else { return true }
-                        return date2.compare(date1) == .orderedAscending
-                    })
+                    if(query.isEmpty){
+                        _packages = _packages.sorted(by: { package1, package2 -> Bool in
+                            guard let date1 = package1.installDate,
+                                  let date2 = package2.installDate else { return true }
+                            return date2.compare(date1) == .orderedAscending
+                        })
+                    }else{
+                        _packages = packageManager.sortPackages(packages: _packages, search: query)
+                    }
                 case .size:
                     _packages = _packages.sorted { $0.installedSize ?? 0 > $1.installedSize ?? 0 }
                 case .name:
