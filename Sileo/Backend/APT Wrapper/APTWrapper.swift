@@ -452,6 +452,8 @@ class APTWrapper {
                     }
                 }
             }
+            
+            finish = .restart
 
             stdoutSource.resume()
             stderrSource.resume()

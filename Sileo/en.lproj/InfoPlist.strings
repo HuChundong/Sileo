@@ -1,0 +1,15 @@
+/* 
+  InfoPlist.strings
+  Sileo
+
+  Created by 胡春东 on 2022/12/30.
+  Copyright © 2022 Sileo Team. All rights reserved.
+*/
+
+"UPGRADE_ALL_ITEM_SHORTCUT_TITLE" = "Upgrade All";
+
+"REFRESH_ITEM_SHORTCUT_TITLE" = "Refresh";
+
+"ADD_SOURCE_ITEM_SHORTCUT_TITLE" = "Add Source";
+
+"PACKAGES_ITEM_SHORTCUT_TITLE" = "Packages";

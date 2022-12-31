@@ -547,7 +547,7 @@
 			<key>UIApplicationShortcutItemIconFile</key>
 			<string>UpgradeAll</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Upgrade All</string>
+			<string>UPGRADE_ALL_ITEM_SHORTCUT_TITLE</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>$(PRODUCT_BUNDLE_IDENTIFIER).UpgradeAll</string>
 		</dict>
@@ -555,7 +555,7 @@
 			<key>UIApplicationShortcutItemIconFile</key>
 			<string>Refresh</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Refresh</string>
+			<string>REFRESH_ITEM_SHORTCUT_TITLE</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>$(PRODUCT_BUNDLE_IDENTIFIER).Refresh</string>
 		</dict>
@@ -563,7 +563,7 @@
 			<key>UIApplicationShortcutItemIconType</key>
 			<string>UIApplicationShortcutIconTypeAdd</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Add Source</string>
+			<string>ADD_SOURCE_ITEM_SHORTCUT_TITLE</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>$(PRODUCT_BUNDLE_IDENTIFIER).AddSource</string>
 		</dict>
@@ -571,7 +571,7 @@
 			<key>UIApplicationShortcutItemIconFile</key>
 			<string>Packages</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Packages</string>
+			<string>PACKAGES_ITEM_SHORTCUT_TITLE</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>$(PRODUCT_BUNDLE_IDENTIFIER).Packages</string>
 		</dict>
