@@ -17,6 +17,8 @@
 		172B2EDA22F0A356000155B9 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172B2ED222F08D31000155B9 /* LicenseViewController.swift */; };
 		172B2EDC22F0A35D000155B9 /* FlaggedSourceWarningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172B2ED622F09E8F000155B9 /* FlaggedSourceWarningViewController.swift */; };
 		1761F827227B5ADD00E03DC3 /* Licenses.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1761F826227B5ADD00E03DC3 /* Licenses.plist */; };
+		2886DC43295F18AA005E63CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2886DC46295F18AA005E63CB /* InfoPlist.strings */; };
+		2886DC44295F18AA005E63CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2886DC46295F18AA005E63CB /* InfoPlist.strings */; };
 		461FC22820ED7A48001EA199 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461FC22720ED7A48001EA199 /* Security.framework */; };
 		493B23D226098104007D605F /* Chimera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 493B23CE26098104007D605F /* Chimera@2x.png */; platformFilter = ios; };
 		493B23D326098104007D605F /* Chimera~ipad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 493B23CF26098104007D605F /* Chimera~ipad@2x.png */; platformFilter = ios; };
@@ -1144,6 +1146,9 @@
 		1B2E13C126163313005C380C /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = Sileo/vi.lproj/Errors.strings; sourceTree = "<group>"; };
 		1B2E13C226163313005C380C /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = Sileo/vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1B2E13C326163313005C380C /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = vi; path = Sileo/vi.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		2886DC45295F18AA005E63CB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		2886DC47295F193C005E63CB /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		2886DC48295F1E96005E63CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		36A4571F24CAA74600390334 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "Sileo/zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		36A4572024CAA74600390334 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = "zh-Hant"; path = "Sileo/zh-Hant.lproj/Localizable.stringsdict"; sourceTree = "<group>"; };
 		36A4572124CAA74600390334 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "Sileo/zh-Hant.lproj/Categories.strings"; sourceTree = "<group>"; };
@@ -2486,6 +2491,7 @@
 				F1B99EE620DB671300374C27 /* UI */,
 				F19FB39B22BF50D3008E986B /* Sileo-Bridging-Header.h */,
 				F149E0C120B6040B005CA30B /* Info.plist */,
+				2886DC46295F18AA005E63CB /* InfoPlist.strings */,
 				4975C4EA264772CA00D344B0 /* Entitlements.entitlements */,
 				E1D28C762660018100DACF31 /* Sileo.entitlements */,
 				F149E0B920B6040B005CA30B /* Main.storyboard */,
@@ -3514,6 +3520,7 @@
 				E155D4AF28CE5A1900AC7AE0 /* FlowerSileo~ipad@2x.png in Resources */,
 				E1A2D134281F30E60006411B /* Procursus@3x.png in Resources */,
 				F139D14422EA9209007F5C0D /* NewsViewController.xib in Resources */,
+				2886DC44295F18AA005E63CB /* InfoPlist.strings in Resources */,
 				E155D4F128CE5A8600AC7AE0 /* Stardust~ipad@2x.png in Resources */,
 				E13BD77C2645E1AA006A5EF2 /* Nightly@3x.png in Resources */,
 				E1A2D129281F30D70006411B /* MangoCrazy~ipad@2x.png in Resources */,
@@ -3585,6 +3592,7 @@
 				E155D49928CE5A1900AC7AE0 /* Cheyote~ipad@3x.png in Resources */,
 				E1BB50DF260E913A00F870B8 /* OG@2x.png in Resources */,
 				E155D4B728CE5A1900AC7AE0 /* FlowerSileo@3x.png in Resources */,
+				2886DC43295F18AA005E63CB /* InfoPlist.strings in Resources */,
 				E155D4CB28CE5A5B00AC7AE0 /* Hazel~ipad@2x.png in Resources */,
 				493B23FE26098169007D605F /* Sus@2x.png in Resources */,
 				1716FD7321D5354100124AD2 /* FlaggedSourceWarningViewController.xib in Resources */,
@@ -4361,6 +4369,16 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		2886DC46295F18AA005E63CB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2886DC45295F18AA005E63CB /* zh-Hans */,
+				2886DC47295F193C005E63CB /* zh-Hant */,
+				2886DC48295F1E96005E63CB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		C373923421D5E46900E6F704 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -4887,7 +4905,7 @@
 				CODE_SIGN_ENTITLEMENTS = "$(TARGET_NAME)/Sileo.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				DEVELOPMENT_TEAM = 7J8FJX4SRX;
+				DEVELOPMENT_TEAM = C325Q5C6RQ;
 				ENABLE_BITCODE = NO;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				ENABLE_TESTABILITY = YES;
@@ -5322,7 +5340,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 7J8FJX4SRX;
+				DEVELOPMENT_TEAM = C325Q5C6RQ;
 				ENABLE_BITCODE = NO;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -5382,7 +5400,7 @@
 				CODE_SIGN_ENTITLEMENTS = "$(TARGET_NAME)/Sileo.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				DEVELOPMENT_TEAM = 7J8FJX4SRX;
+				DEVELOPMENT_TEAM = C325Q5C6RQ;
 				ENABLE_BITCODE = NO;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				ENABLE_TESTABILITY = YES;

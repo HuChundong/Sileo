@@ -374,6 +374,22 @@ class PackageListViewController: SileoViewController, UIGestureRecognizerDelegat
     
     var isEnabled = true
     @objc func upgradeAllClicked(_ sender: Any?) {
+        let upgradePopup = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let upgradeAction = UIAlertAction(title: String(localizationKey: "Upgrade_All"), style: .default, handler: { _ in
+            self.upgradeAll()
+        })
+        let ignoreAction = UIAlertAction(title: String(localizationKey: "Ignore_All_Upgrade"), style: .default, handler: { _ in
+            self.ignoreAllUpgrade()
+        })
+        upgradePopup.addAction(upgradeAction)
+        upgradePopup.addAction(ignoreAction)
+        let cancelAction = UIAlertAction(title: String(localizationKey: "Cancel"), style: .cancel, handler: nil)
+        upgradePopup.addAction(cancelAction)
+
+        self.present(upgradePopup, animated: true)
+    }
+    
+    @objc func upgradeAll() {
         guard isEnabled else { return }
         isEnabled = false
         hapticResponse()
@@ -382,6 +398,34 @@ class PackageListViewController: SileoViewController, UIGestureRecognizerDelegat
                 self?.isEnabled = true
             }
         }
+    }
+    
+    
+    // 忽略所有的更新
+    @objc func ignoreAllUpgrade() {
+        guard isEnabled else { return }
+        isEnabled = false
+        hapticResponse()
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            PackageListManager.shared.ignoreAllUpgrade {
+                self?.isEnabled = true
+                self?.reloadUpdates()
+                DispatchQueue.main.async {
+                    self?.ignoreAllUpgradeDone()
+                }
+            }
+        }
+    }
+    
+    @objc func ignoreAllUpgradeDone() {
+        let alertController = UIAlertController(title: String(localizationKey: "Ignore_All_Title", type: .general),
+                                                message: String(localizationKey: "Ignore_All_Body", type: .general),
+                                                preferredStyle: .alert
+        )
+        alertController.addAction(UIAlertAction(title: String(localizationKey: "OK"), style: .cancel, handler: { _ in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alertController, animated: true, completion: nil)
     }
     
     @objc func sortPopup(sender: UIView?) {
@@ -519,7 +563,7 @@ extension PackageListViewController: UICollectionViewDataSource {
             return headerView
         case .updates:
             headerView.label?.text = String(localizationKey: "Updates_Heading")
-            headerView.actionText = String(localizationKey: "Upgrade_All_Button")
+            headerView.actionText = String(localizationKey: "Upgrade_Options")
             headerView.sortContainer?.isHidden = true
             headerView.separatorView?.isHidden = true
             headerView.upgradeButton?.addTarget(self, action: #selector(self.upgradeAllClicked(_:)), for: .touchUpInside)

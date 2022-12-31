@@ -215,3 +215,9 @@
 "View_Depiction" = "View Depiction";
 
 "Copy_ID" = "Copy ID";
+
+"Ignore_All_Title" = "Ignore All Packages";
+"Ignore_All_Body" = "All packages waiting to be updated have been ignored";
+"Upgrade_Options" = "Upgrade Options";
+"Upgrade_All" = "Upgrade All Packages";
+"Ignore_All_Upgrade" = "Ignore All Packages";
