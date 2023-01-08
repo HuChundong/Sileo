@@ -41,4 +41,4 @@ If you have questions, ask in the Sileo Discord server.
 
 #
 
-Sileo Team 2018 - 2022
+Sileo Team 2018 - 2023
